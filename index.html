@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>javascript handlebars</title>
+</head>
+<body>
+	<div id="main_content"></div>
+	<script id="post_archive" type="text/x-handlebars-template">
+		<h1>{{title}}</h1>
+		<p>{{description}}</p>
+		<hr>
+		{{#each posts}}
+			{{> postItem}}	
+		{{/each}}
+	</script>
+	<script id="post_item" type="text/x-handlebars-template">
+		<div class="post-item" style="border-bottom:1px solid gray;">
+			<h2>{{title}}</h2>
+			<p>{{content}}</p>
+			{{#if sticky}}
+				<strong>sticky post</strong>
+			{{/if}}
+		</div>
+	</script>
+	<script src="./node_modules/handlebars/dist/handlebars.js"></script>
+	<script src="./script.js"></script>
+</body>
+</html>
